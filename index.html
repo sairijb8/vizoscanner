@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizo Scanner - Free, No Watermark, Unlimited Mobile Scanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #00a859; --dark: #121212; --light: #ffffff; --gray: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        
+        /* Navigation */
+        nav { padding: 20px 5%; display: flex; justify-content: center; align-items: center; background: white; border-bottom: 1px solid #eee; }
+        .logo { font-weight: 800; font-size: 1.8rem; color: var(--primary); letter-spacing: -1px; text-decoration: none;}
+
+        /* Hero Section */
+        header { padding: 80px 5% 20px; text-align: center; background: linear-gradient(180deg, #fff 0%, var(--gray) 100%); }
+        .badge-free { background: #e6f6ee; color: var(--primary); padding: 8px 16px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+        h1 { font-size: 3.2rem; margin: 0 0 15px; letter-spacing: -2px; line-height: 1.1; }
+        .subtitle { font-size: 1.3rem; color: #475569; max-width: 700px; margin: 0 auto 40px; }
+        .highlight { color: var(--primary); font-weight: 800; }
+        
+        /* Play Store Button */
+        .playstore-badge img { height: 64px; transition: transform 0.2s; }
+        .playstore-badge img:hover { transform: scale(1.05); }
+
+        /* --- BARU: Gaya untuk Preview Horizontal --- */
+        .preview-container {
+            width: 100%;
+            overflow-x: auto; /* Memungkinkan scroll horizontal jika layar sempit */
+            padding: 40px 0;
+            margin-top: 30px;
+            -webkit-overflow-scrolling: touch; /* Scroll halus di iOS */
+        }
+
+        .preview-flex {
+            display: flex;
+            justify-content: center; /* Rata tengah di layar lebar */
+            gap: 20px; /* Jarak antar gambar */
+            padding: 0 20px; /* Padding di ujung scroll */
+            width: max-content; /* Pastikan flex container selebar kontennya */
+            margin: 0 auto;
+        }
+
+        .app-preview {
+            max-width: 260px; /* Ukuran gambar sedikit diperkecil agar muat banyak */
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 6px solid #222;
+            display: block;
+            flex-shrink: 0; /* Mencegah gambar menyusut */
+            transition: 0.3s;
+        }
+        
+        /* Efek sedikit menonjolkan gambar tengah pada layar lebar */
+        .app-preview:nth-child(2) {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        /* --- Fitur & Footer --- */
+        .features { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .card { padding: 40px; border-radius: 20px; background: white; border: 1px solid #f1f5f9; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        .card h3 { color: var(--dark); font-size: 1.4rem; margin-bottom: 10px; }
+        .card p { color: #64748b; font-size: 1rem; }
+
+        footer { padding: 60px 5%; text-align: center; background: var(--dark); color: white; }
+        .footer-links { margin-bottom: 20px; }
+        footer a { color: #94a3b8; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
+        footer a:hover { color: var(--primary); }
+        .smk-credit { font-size: 0.85rem; opacity: 0.5; margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px; }
+
+        /* Penyesuaian Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.1rem; }
+            
+            /* Di mobile, hapus rata tengah dan biarkan scroll dari kiri */
+            .preview-flex {
+                justify-content: flex-start;
+                margin: 0;
+            }
+            .app-preview {
+                max-width: 220px; /* Lebih kecil di mobile */
+            }
+            .app-preview:nth-child(2) {
+                transform: none; /* Hapus efek skala di mobile agar rapi saat di-scroll */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">VIZO SCANNER</a>
+    </nav>
+
+    <header>
+        <div class="badge-free">100% Free App</div>
+        <h1>Powerful Scanning.<br><span class="highlight">Zero Limits.</span></h1>
+        <p class="subtitle">
+            Experience the freedom of scanning without <strong>watermarks</strong>, <strong>page limits</strong>, or hidden costs.
+        </p>
+        
+        <a href="https://play.google.com/store/apps/details?id=id.sch.smkn3bjb.easyscanner" class="playstore-badge" target="_blank">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Vizo Scanner on Google Play">
+        </a>
+
+        <div class="preview-container">
+            <div class="preview-flex">
+                <img src="sc1.jpg" alt="Vizo Scanner Home Screen" class="app-preview">
+                <img src="sc2.jpg" alt="Vizo Scanning Process" class="app-preview">
+                <img src="sc3.jpg" alt="Vizo PDF Export Options" class="app-preview">
+                <img src="sc4.jpg" alt="Vizo Scanning Process" class="app-preview">
+                <img src="sc5.jpg" alt="Vizo PDF Export Options" class="app-preview">
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="card">
+            <span class="icon">✨</span>
+            <h3>No Watermarks</h3>
+            <p>Keep your documents clean and professional. We never add branding to your scanned files.</p>
+        </div>
+        <div class="card">
+            <span class="icon">♾️</span>
+            <h3>Unlimited Pages</h3>
+            <p>Scan as many pages as you need. No restrictions on document length or count.</p>
+        </div>
+        <div class="card">
+            <span class="icon">🛡️</span>
+            <h3>Privacy First</h3>
+            <p>Documents are processed 100% offline on your device. Your data stays yours.</p>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://sairijb8.github.io">Privacy Policy</a>
+            <a href="mailto:sairi.jb14@gmail.com">Contact Support</a>
+        </div>
+        <p>&copy; 2026 Vizo Scanner. All rights reserved.</p>
+        <p class="smk-credit">
+            Developed by <strong>AF Studio Team</strong>
+        </p>
+    </footer>
+
+</body>
+</html>
